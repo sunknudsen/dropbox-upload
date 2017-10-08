@@ -25,4 +25,4 @@ Add the access token to `.env`.
 
 ## Usage
 
-Run `python dropbox-upload.py path_to_file`
+Run `python dropbox-upload.py path-to-file`
