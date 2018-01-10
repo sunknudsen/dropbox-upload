@@ -21,11 +21,11 @@ destination_path = '/' + file_name
 dbx = dropbox.Dropbox(ACCESS_TOKEN)
 
 if file_size <= CHUNK_SIZE:
-	try:
-	    dbx.files_upload(file.read(), destination_path, mode=dropbox.files.WriteMode.overwrite)
-	    print 'done'
-	except Exception, error:
-		sys.exit(error.error)
+    try:
+        dbx.files_upload(file.read(), destination_path, mode=dropbox.files.WriteMode.overwrite)
+        print 'done'
+    except Exception, error:
+        sys.exit(error.error)
 else:
     try:
         upload_session_start_result = dbx.files_upload_session_start(file.read(CHUNK_SIZE))
