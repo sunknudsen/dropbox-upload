@@ -10,6 +10,7 @@ pip install dropbox python-dotenv
 
 ```
 git clone https://github.com/sunknudsen/dropbox-upload.git
+cd dropbox-upload
 cp .env.sample .env
 ```
 
