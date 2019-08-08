@@ -23,7 +23,7 @@ dbx = dropbox.Dropbox(access_token)
 if file_size <= chunk_size:
     try:
         dbx.files_upload(file.read(), destination_path, mode=dropbox.files.WriteMode.overwrite)
-        print('Done')
+        print('Upload to Dropbox completed')
     except Exception as error:
         sys.exit(error.error)
 else:
@@ -34,7 +34,7 @@ else:
         while file.tell() < file_size:
             if ((file_size - file.tell()) <= chunk_size):
                 dbx.files_upload_session_finish(file.read(chunk_size), cursor, commit)
-                print('Done')
+                print('Upload to Dropbox completed')
             else:
                 dbx.files_upload_session_append(file.read(chunk_size), cursor.session_id, cursor.offset)
                 cursor.offset = file.tell()
