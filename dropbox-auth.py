@@ -1,8 +1,11 @@
 from os.path import join, dirname
 from os import environ
-from dotenv import load_dotenv # pip3 install python-dotenv
-import dropbox # pip3 install dropbox
+from dotenv import load_dotenv 
+import dropbox 
 import sys
+
+#Installing dependencies when start
+os.system("pip3 install python-dotenv && pip3 install dropbox")
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
